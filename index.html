@@ -25,7 +25,9 @@
 	<!--- Imports --->
 	<link rel="stylesheet" type="text/css" href="a.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="a.js"></script>
+
+	<!-- Edge -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!--- Mobile --->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no" />
@@ -54,12 +56,12 @@
 
 	</style>
 	<!-- <div class="canvas-container">
-		<canvas class="upper-canvas"> </canvas>
+		<canvas id="upper-canvas" class="upper-canvas"> </canvas>
 		<canvas id="canvas" class="lower-canvas"> </canvas>
 	</div> -->
 	<div class="page flex">
 		<div id="top"> </div>
-		<div class="navbar flex"> 
+		<nav class="navbar flex"> 
 			<a href="#what-container" class="navlink navlink-light flex">
 				ABOUT
 			</a>
@@ -72,11 +74,30 @@
 			<a href="#winners-container" class="navlink navlink-light flex">
 				PAST WINNERS
 			</a>
-			<a href="#sponsors-container" class="navlink navlink-light flex">
+			<a href="#sponsors-header" class="navlink navlink-light flex">
 				SPONSORS
 			</a>
-		</div>
-		<div id="splash-container" class="flex">
+			<div class="navbar-small flex">
+				<a class="navlink navlink-light flex" onclick="toggleDarkMode()">
+					<img class="navlogo navlogo-light" src="assets/1kp_2019.png">
+				</a>
+				<div class="flex navbar-small-text-links">
+					<a href="#what-container" class="navlink navlink-light flex">
+					ABOUT
+					</a>
+					<a href="#faq-header" class="navlink navlink-light flex">
+						FAQ
+					</a>
+					<a href="#winners-container" class="navlink navlink-light flex">
+						PAST WINNERS
+					</a>
+					<a href="#sponsors-header" class="navlink navlink-light flex">
+						SPONSORS
+					</a>
+				</div>
+			</div>
+		</nav>
+		<div id="splash-container" class="flex container">
 			<img id="splash-img" class="splash-img" src="assets/landing.png">
 			<div class="splash-right flex">
 				<div class="header"> BRUIN ENTREPRENEURS PRESENTS: </div>
@@ -84,49 +105,54 @@
 				<a href="http://bruinentrepreneurs.org" target="_blank" class="splash-button button-border header"> Submit a pitch! </a>
 			</div>
 		</div>
-		<div id="what-container" class="flex">
+		<div id="what-container" class="flex container">
 			<div class="what-left flex" style="text-align: left;">
-				<img class="left-side-header what-left-text" src="assets/titles/starts.png">
+				<div class="left-side-header-holder">
+					<img class="left-side-header what-left-text" src="assets/titles/starts.png">
+				</div>
 				<img class="what-left-img" src="assets/what.png">
 			</div>
 			<div class="what-half">
+				<div class="what-half-background-img"> </div>
 				<div class="header"> What is 1KP? </div>
 				<div class="text"> 1000 Pitches is a four-week long campaign hosted by Bruin Entrepreneurs with the goal of fostering entrepreneurial thinking across UCLA. Students from all backgrounds will be able to pitch their ideas. All ideas are welcome! </div>
 				<div class="header"> How does it work?</div>
 				<div class="text"> You can submit a 30-second video of your idea or pitch through this website or our Facebook page, or find us on Bruinwalk! You will automatically get a free shirt for participating. You will also get the chance to be selected for the best pitch of the week, which we will publish weekly on our Facebook page. 
 					<br> <br>
 				At the end of our campaign, we will select the top ten ideas and host a final event. If you are selected as a finalist, you will pitch in front of an audience and a judging panel consisting of representatives from top VC firms in LA. The winners will be awarded prizes! 
-				<br> <br>
-				Visit us on Facebook!</div>
-				<img id="faq-header" src="assets/titles/faq.png"> </div>
+				<br><br>
+				<a class="text" href="https://www.facebook.com/events/906063079781622/" target="_blank" style="text-decoration: underline;">
+				Visit us on Facebook! </a></div>
+				<div class="right-side-header-holder flex"> <img id="faq-header" class="right-side-header" src="assets/titles/faq.png"> </div> 
+			</div>
 		</div>
-		<div id="faq-container" class="flex">
+		<div id="faq-container" class="flex container">
 			<div class="faq-text flex">
 				<div class="header"> Do I have to be a certain major? </div>
 				<div class="text"> Nope! We accept pitches from any major. In fact, we value diversity of thought and encourage students from non-conventional majors (aka not Biz Econ, CS, or others) to try and pitch your idea!
 				</div>
-				<div class="header">Does it have to be a business idea? What if I don’t have any?
+				<div class="header">Does it have to be a business idea? What if I don&#39;t have any?
 				</div>
 				<div class="text">Although a compelling idea for a startup or a business will most likely be selected for best weekly pitches and the top ten pitches, you can pitch any idea for the free shirt. We appreciate your initiative to get out of your comfort zone and put your idea out there!</div>
 				<div class="header"> What is a pitch exactly? </div>
-				<div class="text"> A pitch is when you state your idea and convince your audience that your idea is amazing. People get creative with their pitches, so there is no exact standard. However, here’s an example from last year to get you inspired, </div>
+				<div class="text"> A pitch is when you state your idea and convince your audience that your idea is amazing. People get creative with their pitches, so there is no exact standard. However, here&#39;s an example from last year to get you inspired, </div>
 				<div class="header"> Where can I pitch?</div>
 				<div class="text"> You can find us on Bruinwalk during the weekdays - we will be posting in our event page every time we set up, so keep an eye out for that! You can also submit your video through our website here or send your video to our Facebook page.</div>
-				<div class="header"> I just want the free shirt, but I don’t want to pitch. Is this OK?</div>
-				<div class="text"> Unfortunately, you can only get the shirt after you pitch. The good news is, the pitch is only 30 seconds, so it’s super short and you can literally pitch anything you want! A lot of people come up with ideas on the spot, and we love them.</div>
+				<div class="header"> I just want the free shirt, but I don&#39;t want to pitch. Is this OK?</div>
+				<div class="text last-faq-text"> Unfortunately, you can only get the shirt after you pitch. The good news is, the pitch is only 30 seconds, so it&#39;s super short and you can literally pitch anything you want! A lot of people come up with ideas on the spot, and we love them.</div>
 			</div>
 			<img class="faq-img" src="assets/faq.png">
 		</div>
+		<img class="faq-img-small" src="assets/faq-turned.png">
 		<!---
 			<div class="winners-right-fake"> </div>
 		</div> -->
-		<div id="winners-container">
-			<div class="winners-top-layer flex">
-					<img class="winners-left-text left-side-header" src="assets/titles/viral.png">
-				<div class="winners-right-fake"> </div>
+		<div id="winners-container" class="container">
+			<div class="winners-top-layer left-side-header-holder flex">
+				<img class="winners-left-text left-side-header" src="assets/titles/viral.png">
 			</div>
 			<div class="winners-bottom-layer">
-				<div class="winners-bottom-layer-top-space"> </div>
+				<!-- <div class="winners-bottom-layer-top-space"> </div> -->
 				<div class="winners flex">
 					<div data-winner="1" id="winner1" class="winner flex"> 
 						<img id="winner-img1" class="winner-img" src="assets/winners/winner1.png">
@@ -140,8 +166,8 @@
 				</div>
 			</div>
 		</div>
-		<img id="sponsors-header" class="right-side-header" src="assets/titles/sponsors.png">
-		<div id="sponsors-container" class="flex">
+		<div class="right-side-header-holder flex"> <img id="sponsors-header" class="right-side-header" src="assets/titles/sponsors.png"> </div> 
+		<div id="sponsors-container" class="flex container">
 			<a class="sponsor" href="https://startupucla.com/" target="_blank"> 
 				<img id="startup" src="assets/sponsors/startup.png">
 			</a>
@@ -186,9 +212,167 @@
 			</a>
 		</div>
 	</div>
-	<a class="footer flex" href="http://bruinentrepreneurs.org" target="_blank">
-			<img id="be-logo" src="assets/black.png">
-			<div class="footer-text"> made with love by BRUIN ENTREPRENEURS</div>
+	<div class="pre-footer-purple-bar"> </div>
+	<div class="footer flex">
+		<a class="flex" href="http://bruinentrepreneurs.org">
+			<img class="be-logo" src="assets/be-logo-blue.png">
+			<div class="footer-text"> made with love by <span>BRUIN ENTREPRENEURS</span></div>
+		</a>
 	</div>
+
+<script src="fabric.js"></script>
+<script src="brush.js"></script>
+<!----- NOTE: Code adapted from: https://cmyk.innovativedesign.club/ ----->
+<script>
+var canvas;
+var colors = {
+      "#F8EC38": 0.5 //natasha yellow
+};
+  function paint() {
+  	// original yellow: #F8EC38, 0.5 opacity
+  	// original purple-pink: "#EC248F", 0.1
+
+  	//used for the website: 
+  	// dark mode blue: "#3DC0EF": 0.1 opacity
+  	// lightblue yellow: "#F8EC38": 0.5 opacity
+    window.canvas = new fabric.Canvas('canvas', {
+      isDrawingMode: true,
+      hoverCursor: "auto",
+      defaultCursor: "default"
+    })
+    .setWidth(window.innerWidth)
+    .setHeight(window.innerHeight);
+
+    var colorKeys = Object.keys(window.colors);
+    var color = colorKeys[Math.floor(Math.random() * colorKeys.length)];
+    window.canvas.freeDrawingBrush = new fabric.CrayonBrush(window.canvas, {
+      width: 70,
+      opacity: window.colors[color],
+      color: color
+    });
+    window.canvas.isDrawingMode = true;
+    if (!("ontouchstart" in document.documentElement)) {
+      window.canvas.on("mouse:move", function(opt) {
+        window.canvas._onMouseDownInDrawingMode(opt.e);
+      });
+    } else {
+      document.querySelector(".canvas-container").style.pointerEvents = "none";
+      var x = document.documentElement.clientWidth / 2,
+        y = document.documentElement.clientHeight / 2,
+        vx = 0, vy = 0,
+        ax = 0, ay = 0;
+
+      // Much taken from www.albertosarullo.com/demos/accelerometer/
+      // Thank you :^)
+      if (window.DeviceMotionEvent != undefined) {
+        window.ondevicemotion = function(e) {
+          ax = event.accelerationIncludingGravity.x * 5;
+          ay = event.accelerationIncludingGravity.y * 5;
+        }
+
+        setInterval(function() {
+          var landscapeOrientation = window.innerWidth / window.innerHeight > 1;
+          if (landscapeOrientation) {
+            vx = vx + ay;
+            vy = vy + ax;
+          } else {
+            vy = vy - ay;
+            vx = vx + ax;
+          }
+          vx = vx * 0.98;
+          vy = vy * 0.98;
+          y = parseInt(y + vy / 50);
+          x = parseInt(x + vx / 50);
+
+          boundingBoxCheck();
+          var upperCanvas = document.querySelector(".upper-canvas");
+          var syntheticEvent = syntheticMouseEvent(upperCanvas, {
+            x: x,
+            y: y,
+            target: upperCanvas,
+            relatedTarget: upperCanvas
+          });
+          // canvas.isDrawingMode = true;
+          window.canvas._onMouseDownInDrawingMode(syntheticEvent);
+        }, 20);
+      } 
+
+
+      function boundingBoxCheck(){
+        // bouncy!
+        if (x < 0) {
+          x = 0; vx = -vx;
+        }
+        if (y < 0) {
+          y = 0; vy = -vy;
+        }
+        if (x > window.innerWidth) {
+          x = window.innerWidth;
+          vx = -vx;
+        }
+        if (y > window.innerHeight) {
+          y = window.innerHeight;
+          vy = -vy;
+        }
+      }
+    }
+
+    window.addEventListener("resize", () => {
+      window.canvas.setWidth(window.innerWidth);
+      window.canvas.setHeight(window.innerHeight);
+    });
+
+    // Thank you to https://stackoverflow.com/questions/6157929/how-to-simulate-a-mouse-click-using-javascript
+    // for this magic!
+    function syntheticMouseEvent(target, options) {
+      var event = target.ownerDocument.createEvent('MouseEvent'),
+          options = options || {},
+          opts = {
+            type: "mousemove",
+            canBubble: true,
+            cancelable: true,
+            view: target.ownerDocument.defaultView,
+            detail: 1,
+            screenX: options.x,
+            screenY: options.y,
+            clientX: options.x,
+            clientY: options.y,
+            ctrlKey: false,
+            altKey: false,
+            shiftKey: false,
+            metaKey: false,
+            button: 0,
+            relatedTarget: null,
+          };
+      for (var key in options) {
+        if (options.hasOwnProperty(key)) {
+          opts[key] = options[key];
+        }
+      }
+      event.initMouseEvent(
+          opts.type,
+          opts.canBubble,
+          opts.cancelable,
+          opts.view,
+          opts.detail,
+          opts.screenX,
+          opts.screenY,
+          opts.clientX,
+          opts.clientY,
+          opts.ctrlKey,
+          opts.altKey,
+          opts.shiftKey,
+          opts.metaKey,
+          opts.button,
+          opts.relatedTarget
+      );
+      target.dispatchEvent(event);
+      return event;
+    }
+  }
+
+  paint();
+</script>
+<script src="be.js"></script>
 </body>
 </html>

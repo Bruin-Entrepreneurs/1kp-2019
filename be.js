@@ -64,7 +64,10 @@ function winnersOff() {
 }
 
 function centerWinners() {
-	//console.log("centerWinners");
+	if($("#winner-img1").css("paddingTop") == "0px") {
+		console.log("nah");
+		return;
+	}
 	num = $(this).attr("data-winner");
 	if(alreadyHoveringWinner ==  true) {
 		if(num == 1) {
@@ -106,6 +109,10 @@ function centerWinners() {
 }
 
 function uncenterWinners() {
+	if($("#winner-img1").css("paddingTop") == "0px") {
+		console.log("nah");
+		return;
+	}
 	//console.log("uncenterWinners");
 	for(var i = 0; i < winnersTimeouts.length; i++) {
 		clearTimeout(winnersTimeouts[i]);
@@ -126,7 +133,8 @@ function toggleDarkMode() {
 		$(".navlink").removeClass("navlink-light").addClass("navlink-dark");
 		$(".navlogo").removeClass("navlogo-light").addClass("navlogo-dark");
 		$(".text").css("color", "snow");
-		document.getElementById('be-logo').src="assets/white.png";
+		$(".be-logo").addClass("dark-logo");
+		$(".footer").addClass("dark-footer");
 		document.getElementById('winner-img1').src="assets/winners/winner1-dark.png";
 		document.getElementById('winner-img2').src="assets/winners/winner2-dark.png";
 		document.getElementById('winner-img3').src="assets/winners/winner3-dark.png";
@@ -140,6 +148,19 @@ function toggleDarkMode() {
 		document.getElementById('eighty-two').src="assets/sponsors/eighty-two-dark.png";
 		document.getElementById('ipic').src="assets/sponsors/ipic-dark.png";
 		document.getElementById('tylt').src="assets/sponsors/tylt-dark.png";
+
+
+		//change paint color
+		window.colors = {
+      		"#3DC0EF": 0.1 //blue
+    	};
+
+    	window.canvas.freeDrawingBrush.opacity = 0.1;
+    	window.canvas.freeDrawingBrush.color = "#3DC0EF";
+    	window.canvas.freeDrawingBrush.changeColor("#3DC0EF");
+    	
+    	window.canvas.setHeight(window.innerHeight - 1); // get rid of old canvas
+    	window.canvas.setHeight(window.innerHeight); // get rid of old canvas
 	}
 	else {
 		darkMode = false;
@@ -147,7 +168,8 @@ function toggleDarkMode() {
 		$(".navlink").removeClass("navlink-dark").addClass("navlink-light");
 		$(".navlogo").removeClass("navlogo-dark").addClass("navlogo-light");
 		$(".text").css("color", "black");
-		document.getElementById('be-logo').src="assets/black.png";
+		$(".be-logo").removeClass("dark-logo");
+		$(".footer").removeClass("dark-footer");
 		document.getElementById('winner-img1').src="assets/winners/winner1.png";
 		document.getElementById('winner-img2').src="assets/winners/winner2.png";
 		document.getElementById('winner-img3').src="assets/winners/winner3.png";
@@ -161,6 +183,17 @@ function toggleDarkMode() {
 		document.getElementById('eighty-two').src="assets/sponsors/eighty-two.png";
 		document.getElementById('ipic').src="assets/sponsors/ipic.png";
 		document.getElementById('tylt').src="assets/sponsors/tylt.png";
+
+
+		//change paint color
+		window.colors = {
+      		"#F8EC38": 0.5 //natasha yellow
+    	};
+    	window.canvas.freeDrawingBrush.color = "#F8EC38";
+    	window.canvas.freeDrawingBrush.opacity = 0.5;
+    	window.canvas.setHeight(window.innerHeight - 1); // get rid of old canvas
+    	window.canvas.setHeight(window.innerHeight); // get rid of old canvas
+
 	}
 
 }
